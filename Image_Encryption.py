@@ -34,9 +34,9 @@ def decrypt_image(encrypted_image_path, key):
     for y in range(height):
         for x in range(width):
             r, g, b = pixels[x, y]
-            r = (r+50 - key) % 256
-            g = (g+50 - key) % 256
-            b = (b+50 - key) % 256
+            r = (r+10 - key) % 256
+            g = (g+10 - key) % 256
+            b = (b+10 - key) % 256
             pixels[x, y] = (b, g, r)
 
     # Save the decrypted image
