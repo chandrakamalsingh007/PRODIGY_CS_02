@@ -15,7 +15,7 @@ def encrypt_image(image_path, key):
             r = (r + key) % 256
             g = (g + key) % 256
             b = (b + key) % 256
-            pixels[x, y] = (b, g, r)
+            pixels[x, y] = (r, g, b)
 
     # Save the encrypted image
     encrypted_image_path = image_path.replace('.', '_encrypted.')
@@ -37,7 +37,7 @@ def decrypt_image(encrypted_image_path, key):
             r = (r - key) % 256
             g = (g - key) % 256
             b = (b - key) % 256
-            pixels[x, y] = (b, g, r)
+            pixels[x, y] = (r, g, b)
 
     # Save the decrypted image
     decrypted_image_path = encrypted_image_path.replace('_encrypted.', '_decrypted.')
